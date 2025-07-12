@@ -52,7 +52,7 @@ const analyzeRequestSchema = z.object({
 });
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (req: any, res: any) => {
   res.json({ 
     status: 'OK', 
     timestamp: new Date().toISOString(),
@@ -112,7 +112,7 @@ app.post('/api/analyze', rateLimiterMiddleware, async (req, res) => {
 });
 
 // Optional: Telegram webhook endpoint
-app.post('/api/telegram/webhook', (req, res) => {
+app.post('/api/telegram/webhook', (req: any, res: any) => {
   // TODO: Implement Telegram bot webhook
   res.json({ status: 'not implemented' });
 });
@@ -124,7 +124,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 });
 
 // 404 handler
-app.use('*', (req, res) => {
+app.use('*', (req: any, res: any) => {
   res.status(404).json({ error: 'Endpoint not found' });
 });
 
