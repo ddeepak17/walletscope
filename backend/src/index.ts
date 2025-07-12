@@ -24,6 +24,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'https://walletscope.vercel.app',
   'https://walletscope-frontend.vercel.app',
+  'https://walletscope-frontend-asd2vs5i9-ddeepak17s-projects.vercel.app',
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
