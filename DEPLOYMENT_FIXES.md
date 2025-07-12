@@ -30,7 +30,7 @@ Leave empty (or `/`)
 | `NODE_ENV` | `production` |
 | `PORT` | `10000` |
 | `FRONTEND_URL` | `https://your-frontend-vercel-url.vercel.app` |
-| `OPENAI_API_KEY` | `REMOVED_OPENAI_KEY` |
+| `OPENAI_API_KEY` | `your_openai_api_key_here` |
 | `OPENAI_BASE_URL` | `https://api.openai.com/v1` |
 | `RATE_LIMIT_POINTS` | `10` |
 | `RATE_LIMIT_DURATION` | `60` |
