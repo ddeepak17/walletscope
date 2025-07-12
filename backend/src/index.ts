@@ -102,10 +102,15 @@ app.post('/api/analyze', rateLimiterMiddleware, async (req, res) => {
     // Analyze wallet behavior
     const analysis = await analyticsService.analyzeWallet(address, transactions);
     
-    // Optional: Use AI agent for classification (uncomment when ready)
-    // const behavior = await aiAgent.classifyWalletBehavior(transactions);
-    // analysis.classification = behavior.classification;
-    // analysis.llmSummary = await analyticsService.generateLLMSummary(transactions, behavior, analysis.opcodeBins);
+    // Use AI agent for real classification
+    try {
+      const behavior = await aiAgent.classifyWalletBehavior(transactions);
+      analysis.classification = behavior.classification;
+      analysis.llmSummary = await analyticsService.generateLLMSummary(transactions, behavior, analysis.opcodeBins);
+    } catch (aiError) {
+      console.error('AI analysis failed, using fallback:', aiError);
+      // Keep the mock analysis if AI fails
+    }
 
     console.log(`Analysis complete for ${address}: ${analysis.classification}`);
 
