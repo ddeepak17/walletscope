@@ -220,4 +220,4 @@ For support, email support@walletscope.com or join our Discord community.
 
 ---
 
-**Built with ❤️ for the Sei Hackathon** 
+**Built with ❤️ for the Sei Hackathon** # Test commit
